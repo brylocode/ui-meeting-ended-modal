@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(90deg, #C7CBF1 0%, #D9C7F5 100%);
+    font-family: 'Nunito Sans',
+        sans-serif;
+}
+
+.opinion-modal {
+    width: 678px;
+    position: relative;
+    padding: 30px;
+    margin: 30px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1A1832;
+    box-shadow: 0px 27px 21px -21px rgba(26, 24, 50, 0.82818);
+    color: #fff;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 30px;
+    height: 17px;
+    cursor: pointer;
+
+    .icon {
+        transition: transform .2s;
+    }
+
+    &:hover .icon {
+        transform: rotate(90deg);
+    }
+}
+
+
+.information {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 64px;
+}
+
+
+.opinion-box {
+    background-color: #282547;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin-bottom: 50px;
+
+    .question {
+        margin: 20px 0;
+        display: block;
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .star-box {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        max-width: 355px;
+        flex-wrap: wrap;
+    }
+
+    .opinion-info {
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .opinion {
+            display: flex;
+            margin: 0 10px;
+            color: #807CAE;
+        }
+    }
+}
+
+
+// to refactor in js 
+
+.star {
+    height: 40px;
+    width: 40px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: #F3D779;
+    box-shadow: 0px 2px 17px rgba(243, 215, 121, 0.544335);
+    padding: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: .2s background-color;
+
+    &:hover {
+        background-color: darken($color: #F3D779, $amount: 10);
+    }
+}
+
+@mixin btn($bg-color, $font-color) {
+    background-color: $bg-color;
+    color: $font-color;
+
+    &:hover {
+        background-color: darken($color: $bg-color, $amount: 5);
+        color: $font-color;
+    }
+}
+
+
+.btn {
+    padding: 20px 95px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #fff;
+    font-family: inherit;
+    text-align: center;
+    transition: background-color .2s, background-image .2s;
+
+
+    &-purple {
+        @include btn(#672CB9, #fff);
+    }
+
+    &-glass {
+        background-image: linear-gradient(143deg, rgba(103, 44, 185, 1) 50%, rgba(99, 23, 174, 1) 50%);
+
+        &:hover {
+            background-image: linear-gradient(143deg, rgba(103, 44, 185, 1) 49%, rgba(99, 23, 174, 1) 100%);
+        }
+    }
+}
+
+.join-again {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #807CAE;
+    cursor: pointer;
+    margin: 40px 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
